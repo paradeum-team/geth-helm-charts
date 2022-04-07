@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 1.10.13
+appVersion: 1.10.17
 description: A Helm chart for Ethereum geth client
 home: https://ethereum.org/
 keywords:
@@ -8,9 +8,9 @@ maintainers:
 - name: Leo Vigna
   email: leo@vulcan.link
 - name: liujinye 
-  email: 7571541@qq.com
+  email: 75710541@qq.com
 name: geth
 sources:
 - https://github.com/paradeum-team/geth-charts
 type: application
-version: 0.2.2
+version: 0.2.3
