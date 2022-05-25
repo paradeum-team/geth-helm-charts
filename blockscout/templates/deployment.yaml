@@ -32,7 +32,7 @@ spec:
           command: 
             - /bin/sh
             - -c
-            - "mix phx.server"
+            - "mix do ecto.create, ecto.migrate, phx.server"
           {{- with .Values.env }}
           env:
           {{- toYaml . | nindent 10 }}
