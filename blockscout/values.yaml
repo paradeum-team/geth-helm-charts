@@ -11,60 +11,60 @@ image:
   tag: "v4.1.3-beta.3"
 
 env:
- - name: ETHEREUM_JSONRPC_VARIANT
-   value: "geth"
- - name: COIN
-   value: "SC"
- - name: COIN_NAME
-   value: "SC"
- - name: ETHEREUM_JSONRPC_HTTP_URL
-   value: "http://127.0.0.1:8545"
- - name: ETHEREUM_JSONRPC_WS_URL
-   value: "ws://127.0.0.1:8546"
- - name: INDEXER_MEMORY_LIMIT
-   value: "1gb"
- - name: BLOCK_TRANSFORMER
-   value: "clique"
- - name: NETWORK
-   value: "Solar Chain"
- - name: SUBNETWORK
-   value: "Solar Chain Testnet"
- - name: LOGO
-   value: "/images/chain-wallet.png"
- - name: LOGO_FOOTER
-   value: "/images/chain-wallet.png"
- - name: BLOCKSCOUT_VERSION
-   value: "v4.1.3-beta.3"
- - name: RELEASE_LINK
-   value: "https://github.com/paradeum-team/blockscout/releases/tag/${BLOCKSCOUT_VERSION}"
- - name: DISABLE_EXCHANGE_RATES
-   value: "true"
- - name: DISABLE_KNOWN_TOKENS
-   value: "true"
- - name: SHOW_ADDRESS_MARKETCAP_PERCENTAGE
-   value: "false"
- - name: SHOW_PRICE_CHART
-   value: "false"
- - name: DISABLE_BRIDGE_MARKET_CAP_UPDATER
-   value: "true"
- - name: SHOW_TXS_CHART
-   value: "true"
- - name: ENABLE_TXS_STATS
-   value: "true"
- - name: HIDE_BLOCK_MINER
-   value: "true"
- - name: DISABLE_READ_API
-   value: "true"
- - name: DISABLE_WRITE_API
-   value: "true"
- - name: ECTO_USE_SSL
-   value: "false"
- - name: SUPPORTED_CHAINS
-   value: '[{"title":"POA","url":"https://blockscout.com/poa/core"},{"title":"Sokol","url":"https://blockscout.com/poa/sokol","test_net?":true},{"title":"Gnosis Chain","url":"https://blockscout.com/xdai/mainnet"},{"title":"Ethereum Classic","url":"https://blockscout.com/etc/mainnet","other?":true},{"title":"RSK","url":"https://blockscout.com/rsk/mainnet","other?":true},{"title":"Solar Chain Testnet","url":"https://sctscan.starnet.ltd/","test_net?":true}]'
- - name: APPS_MENU
-   value: "false"
- - name: EXTERNAL_APPS
-   value: ''
+  - name: ETHEREUM_JSONRPC_VARIANT
+    value: "geth"
+  - name: COIN
+    value: "SC"
+  - name: COIN_NAME
+    value: "SC"
+  - name: ETHEREUM_JSONRPC_HTTP_URL
+    value: "http://127.0.0.1:8545"
+  - name: ETHEREUM_JSONRPC_WS_URL
+    value: "ws://127.0.0.1:8546"
+  - name: INDEXER_MEMORY_LIMIT
+    value: "1gb"
+  - name: BLOCK_TRANSFORMER
+    value: "clique"
+  - name: NETWORK
+    value: "Solar Chain"
+  - name: SUBNETWORK
+    value: "Solar Chain Testnet"
+  - name: LOGO
+    value: "/images/chain-wallet.png"
+  - name: LOGO_FOOTER
+    value: "/images/chain-wallet.png"
+  - name: BLOCKSCOUT_VERSION
+    value: "v4.1.3-beta.3"
+  - name: RELEASE_LINK
+    value: "https://github.com/paradeum-team/blockscout/releases/tag/${BLOCKSCOUT_VERSION}"
+  - name: DISABLE_EXCHANGE_RATES
+    value: "true"
+  - name: DISABLE_KNOWN_TOKENS
+    value: "true"
+  - name: SHOW_ADDRESS_MARKETCAP_PERCENTAGE
+    value: "false"
+  - name: SHOW_PRICE_CHART
+    value: "false"
+  - name: DISABLE_BRIDGE_MARKET_CAP_UPDATER
+    value: "true"
+  - name: SHOW_TXS_CHART
+    value: "true"
+  - name: ENABLE_TXS_STATS
+    value: "true"
+  - name: HIDE_BLOCK_MINER
+    value: "true"
+  - name: DISABLE_READ_API
+    value: "true"
+  - name: DISABLE_WRITE_API
+    value: "true"
+  - name: ECTO_USE_SSL
+    value: "false"
+  - name: SUPPORTED_CHAINS
+    value: '[{"title":"POA","url":"https://blockscout.com/poa/core"},{"title":"Sokol","url":"https://blockscout.com/poa/sokol","test_net?":true},{"title":"Gnosis Chain","url":"https://blockscout.com/xdai/mainnet"},{"title":"Ethereum Classic","url":"https://blockscout.com/etc/mainnet","other?":true},{"title":"RSK","url":"https://blockscout.com/rsk/mainnet","other?":true},{"title":"Solar Chain Testnet","url":"https://sctscan.starnet.ltd/","test_net?":true}]'
+  - name: APPS_MENU
+    value: "false"
+  - name: EXTERNAL_APPS
+    value: ''
 
 envFrom:
   - secretRef:
