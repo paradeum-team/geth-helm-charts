@@ -65,9 +65,9 @@ env:
    value: ''
 
 envFrom:
-  #DATABASE_URL="postgresql://root:123456@127.0.0.1:5432/blockscout"
-  secretRef:
-    name: blockscout-secret
+  - secretRef:
+      #DATABASE_URL="postgresql://root:123456@127.0.0.1:5432/blockscout"
+      name: blockscout-secret
 
 extraVolumeMounts: # 增加挂载扩展挂载目录
   - mountPath: /etc/localtime
