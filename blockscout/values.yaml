@@ -57,6 +57,8 @@ env:
    value: "true"
  - name: DISABLE_WRITE_API
    value: "true"
+ - name: ECTO_USE_SSL
+   value: "false"
  - name: SUPPORTED_CHAINS
    value: '[{"title":"POA","url":"https://blockscout.com/poa/core"},{"title":"Sokol","url":"https://blockscout.com/poa/sokol","test_net?":true},{"title":"Gnosis Chain","url":"https://blockscout.com/xdai/mainnet"},{"title":"Ethereum Classic","url":"https://blockscout.com/etc/mainnet","other?":true},{"title":"RSK","url":"https://blockscout.com/rsk/mainnet","other?":true},{"title":"Solar Chain Testnet","url":"https://sctscan.starnet.ltd/","test_net?":true}]'
  - name: APPS_MENU
