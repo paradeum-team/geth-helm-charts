@@ -11,12 +11,12 @@ image:
   tag: "v4.1.3-beta.3"
 
 
-command: ["mix"]
-args: ["do", "phx.server"]
+command: ["/bin/sh"]
+args: ["-c", "mix do phx.server"]
 
 initContainer:
-  command: ["mix"]
-  args: ["do", "ecto.create, ecto.migrate"]
+  command: ["/bin/sh"]
+  args: ["-c", "mix do ecto.create, ecto.migrate"]
 
 env:
   - name: ETHEREUM_JSONRPC_VARIANT
