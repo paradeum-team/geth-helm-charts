@@ -10,6 +10,14 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v4.1.3-beta.3"
 
+
+command: ["mix"]
+args: ["do", "phx.server"]
+
+initContainer:
+  command: ["mix"]
+  args: ["do", "ecto.create, ecto.migrate"]
+
 env:
   - name: ETHEREUM_JSONRPC_VARIANT
     value: "geth"

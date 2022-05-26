@@ -27,12 +27,30 @@ spec:
       serviceAccountName: {{ include "blockscout.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{ if .Values.envFrom }}
+      initContainers:
+        - name: {{ .Chart.Name }}-init
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            {{- toYaml .Values.initContainer.command | nindent 12 }}
+          args:
+            {{- toYaml .Values.initContainer.args | nindent 12 }}
+          {{- with .Values.env }}
+          env:
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
+          {{- with .Values.envFrom }}
+          envFrom:
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          command: 
-            - /bin/sh
-            - -c
-            - "mix do ecto.create, ecto.migrate, phx.server"
+          command:
+            {{- toYaml .Values.command | nindent 12 }}
+          args:
+            {{- toYaml .Values.args | nindent 12 }}
           {{- with .Values.env }}
           env:
           {{- toYaml . | nindent 10 }}
