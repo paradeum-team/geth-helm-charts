@@ -91,14 +91,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "geth.fullname" . }}-env-configmap
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           volumeMounts:
             - name: data
               mountPath: {{ .Values.volumes.data.mountPath }}
