@@ -73,8 +73,6 @@ env:
     value: "false"
   - name: EXTERNAL_APPS
     value: ''
-  - name: PORT
-    value: "4000"
 
 envFrom:
   - secretRef:
