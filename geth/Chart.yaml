@@ -5,12 +5,12 @@ home: https://ethereum.org/
 keywords:
 - ethereum
 maintainers:
-- email: leo@vulcan.link
-  name: Leo Vigna
-- email: 75710541@qq.com
-  name: liujinye
+- name: Leo Vigna
+  email: leo@vulcan.link
+- name: liujinye 
+  email: 75710541@qq.com
 name: geth
 sources:
 - https://github.com/paradeum-team/geth-charts
 type: application
-version: 0.2.10
+version: 0.2.3
