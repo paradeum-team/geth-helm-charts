@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: quay.io/netwarps/blockscout
+  repository: quay.io/netwarps/blockscout@sha256
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v4.1.8-beta.3"
+  tag: "bb30328997c1b147dc123ce6ab9d3f6c2e86583cd26ebd2d3b035211b511339f"
 
 
 command: ["/bin/sh"]
@@ -42,7 +42,7 @@ env:
   - name: LOGO_FOOTER
     value: "/images/chain-wallet.png"
   - name: BLOCKSCOUT_VERSION
-    value: "v4.1.8-beta.3"
+    value: "13573befcc6b94c68b4a05554377e101f36bd7fe"
   - name: RELEASE_LINK
     value: "https://github.com/paradeum-team/blockscout/releases/tag/${BLOCKSCOUT_VERSION}"
   - name: DISABLE_EXCHANGE_RATES
@@ -79,6 +79,12 @@ env:
     value: "40"
   - name: POOL_SIZE_API
     value: "10"
+  - name: ENABLE_RUST_VERIFICATION_SERVICE
+    value: "false"
+  - name: RUST_VERIFICATION_SERVICE_URL
+    value: "http://127.0.0.1:8043/"
+  - name: ACCOUNT_ENABLED
+    value: "false"
 
 envFrom:
   - secretRef:
@@ -95,6 +101,54 @@ extraVolumes: # 增加扩展卷
   - name: localtime
     hostPath:
       path: /etc/localtime
+
+smartContractVerifier:
+  enabled: false
+  image:
+    repository: ghcr.io/blockscout/smart-contract-verifier
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "v0.5.0"
+
+  env:
+    - name: SMART_CONTRACT_VERIFIER__SERVER__ADDR
+      value: "0.0.0.0:8043"
+    - name: SMART_CONTRACT_VERIFIER__SOLIDITY__ENABLED
+      value: "true"
+    - name: SMART_CONTRACT_VERIFIER__SOLIDITY__COMPILERS_DIR
+      value: "/tmp/solidity-compilers"
+    - name: SMART_CONTRACT_VERIFIER__SOLIDITY__REFRESH_VERSIONS_SCHEDULE
+      value: "0 0 * * * * *"
+    - name: SMART_CONTRACT_VERIFIER__SOLIDITY__FETCHER__LIST__LIST_URL
+      value: "https://solc-bin.ethereum.org/linux-amd64/list.json"
+    - name: SMART_CONTRACT_VERIFIER__VYPER__ENABLED
+      value: "true"
+    - name: SMART_CONTRACT_VERIFIER__VYPER__COMPILERS_DIR
+      value: "/tmp/vyper-compilers"
+    - name: SMART_CONTRACT_VERIFIER__VYPER__FETCHER__LIST__LIST_URL
+      value: "https://raw.githubusercontent.com/blockscout/solc-bin/main/vyper.list.json"
+    - name: SMART_CONTRACT_VERIFIER__VYPER__REFRESH_VERSIONS_SCHEDULE
+      value: "0 0 * * * * *"
+    - name: SMART_CONTRACT_VERIFIER__SOURCIFY__ENABLED
+      value: "true"
+    - name: SMART_CONTRACT_VERIFIER__SOURCIFY__API_URL
+      value: "https://sourcify.dev/server/"
+    - name: SMART_CONTRACT_VERIFIER__SOURCIFY__VERIFICATION_ATTEMPTS
+      value: "3"
+    - name: SMART_CONTRACT_VERIFIER__SOURCIFY__REQUEST_TIMEOUT
+      value: "10"
+    - name: SMART_CONTRACT_VERIFIER__METRICS__ENABLED
+      value: "false"
+    - name: SMART_CONTRACT_VERIFIER__JAEGER__ENABLED
+      value: "false"
+
+  resources: {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
 
 imagePullSecrets: []
 nameOverride: ""
