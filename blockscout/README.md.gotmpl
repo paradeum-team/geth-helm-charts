@@ -1,0 +1,23 @@
+{{ template "chart.header" . }}
+{{ template "chart.description" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+## Installing the Chart
+
+Add repository
+
+```
+helm repo add paradeum-team https://paradeum-team.github.io/helm-charts/
+helm repo update
+```
+
+Install chart
+
+```
+helm install my-blockscout paradeum-team/blockscout --version --version {{ template "chart.version" . }}
+```
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}

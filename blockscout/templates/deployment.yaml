@@ -5,6 +5,8 @@ metadata:
   labels:
     {{- include "blockscout.labels" . | nindent 4 }}
 spec:
+  strategy:
+    type: Recreate
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
@@ -80,6 +82,31 @@ spec:
           {{- if .Values.extraVolumeMounts }}
           volumeMounts: {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
           {{- end }}
+        {{- if .Values.smartContractVerifier.enabled  }}
+        - name: {{ .Chart.Name }}-smart-contract-verifier
+          {{- with .Values.smartContractVerifier.env }}
+          env:
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
+          {{- with .Values.envFrom }}
+          envFrom:
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
+          image: "{{ .Values.smartContractVerifier.image.repository }}:{{ .Values.smartContractVerifier.image.tag }}"
+          imagePullPolicy: {{ .Values.smartContractVerifier.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8043
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: http
+          readinessProbe:
+            tcpSocket:
+              port: http
+          resources:
+            {{- toYaml .Values.smartContractVerifier.resources | nindent 12 }}
+        {{- end }}
       {{- if .Values.extraVolumes }}
       volumes: {{ toYaml .Values.extraVolumes | nindent 8 }}
       {{- end }}

@@ -15,10 +15,29 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.0
+version: 0.1.4
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "v4.1.3-beta.3"
+appVersion: "13573befcc6b94c68b4a05554377e101f36bd7fe"
+
+
+home: https://github.com/paradeum-team/geth-helm-charts/tree/main/blockscout
+keywords:
+  - ipfs
+  - ipfs-cluster
+source:
+  - https://github.com/paradeum-team/geth-helm-charts/tree/main/blockscout
+  - https://github.com/paradeum-team/blockscout
+maintainers:
+  - name: liujinye
+    email: 75710541@qq.com
+    url: https://github.com/ss75710541
+annotations:
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/paradeum-team/geth-helm-charts/tree/main/blockscout
+    - name: Source
+      url: https://github.com/paradeum-team/blockscout
