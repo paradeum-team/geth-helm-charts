@@ -31,9 +31,11 @@ helm install my-walletconnect-relay paradeum-team/walletconnect-relay --version 
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"walletconnect/relay"` |  |
-| image.tag | string | `"v2.0.0"` |  |
+| image.tag | string | `"master"` |  |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations."nginx.org/location-snippets" | string | `"proxy_read_timeout      1800;\nproxy_send_timeout      1800;\nkeepalive_timeout       1800;\nproxy_set_header        Host $host;\nproxy_set_header        http_x_forwarded_for  $remote_addr;\n\nproxy_http_version      1.1;\nproxy_set_header Upgrade $http_upgrade;\nproxy_set_header Connection $connection_upgrade;\n"` |  |
+| ingress.annotations."nginx.ingress.kubernetes.io/proxy-http-version" | string | `"1.1"` |  |
+| ingress.annotations."nginx.ingress.kubernetes.io/proxy-read-timeout" | string | `"1800"` |  |
+| ingress.annotations."nginx.ingress.kubernetes.io/proxy-send-timeout" | string | `"1800"` |  |
 | ingress.className | string | `""` |  |
 | ingress.enabled | bool | `false` |  |
 | ingress.hosts[0].host | string | `"chart-example.local"` |  |
@@ -45,6 +47,7 @@ helm install my-walletconnect-relay paradeum-team/walletconnect-relay --version 
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
+| projectid | string | `""` |  |
 | redisUrl | string | `"redis://redis:6379/0"` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
