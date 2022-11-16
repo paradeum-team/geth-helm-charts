@@ -12,6 +12,7 @@ image:
 
 redisUrl: "redis://redis:6379/0"
 logLevel: TRACE
+projectid: ""
 
 imagePullSecrets: []
 nameOverride: ""
