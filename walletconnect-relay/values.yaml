@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: walletconnect/relay
+  repository: walletconnect/relay@sha256
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "master"
+  tag: "a80dd21762f67334488d139ca697fae8d9ef7d48a4b315be7b9d1c4c7f97c6f9"
 
 redisUrl: "redis://redis:6379/0"
 logLevel: TRACE
