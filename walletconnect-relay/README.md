@@ -2,7 +2,7 @@
 
 A Helm chart for Kubernetes
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 63e8f41](https://img.shields.io/badge/AppVersion-63e8f41-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.1.3-rc.1](https://img.shields.io/badge/AppVersion-v2.1.3--rc.1-informational?style=flat-square)
 
 ## Installing the Chart
 
@@ -16,7 +16,7 @@ helm repo update
 Install chart
 
 ```
-helm install my-walletconnect-relay paradeum-team/walletconnect-relay --version --version 0.1.1
+helm install my-walletconnect-relay paradeum-team/walletconnect-relay --version --version 0.1.2
 ```
 
 ## Values
@@ -30,8 +30,8 @@ helm install my-walletconnect-relay paradeum-team/walletconnect-relay --version 
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"walletconnect/relay@sha256"` |  |
-| image.tag | string | `"a80dd21762f67334488d139ca697fae8d9ef7d48a4b315be7b9d1c4c7f97c6f9"` |  |
+| image.repository | string | `"quay.io/netwarps/walletconnect-relay"` |  |
+| image.tag | string | `"v2.1.3-rc.1"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations."nginx.ingress.kubernetes.io/proxy-http-version" | string | `"1.1"` |  |
 | ingress.annotations."nginx.ingress.kubernetes.io/proxy-read-timeout" | string | `"1800"` |  |
