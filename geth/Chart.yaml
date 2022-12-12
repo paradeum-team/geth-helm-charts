@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 1.10.17
+appVersion: 1.10.26
 description: A Helm chart for Ethereum geth client
 home: https://ethereum.org/
 keywords:
@@ -13,4 +13,4 @@ name: geth
 sources:
 - https://github.com/paradeum-team/geth-charts
 type: application
-version: 0.2.10
+version: 0.2.11

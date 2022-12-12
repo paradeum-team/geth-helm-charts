@@ -8,9 +8,12 @@ image:
   repository: ethereum/client-go
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.10.17"
+  tag: "v1.10.26"
   command: ["geth"]
   args: ["--config", "/root/config/config.custom.toml"]
+
+labels: {}
+# ingress-class: "geth-sct-ingress"
 
 initContainer:
   command: ["geth"]
