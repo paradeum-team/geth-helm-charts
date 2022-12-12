@@ -4,6 +4,9 @@ metadata:
   name: {{ include "geth.fullname" . }}
   labels:
     {{- include "geth.labels" . | nindent 4 }}
+    {{- with .Values.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -21,6 +24,9 @@ spec:
       {{- end }}
       labels:
         {{- include "geth.selectorLabels" . | nindent 8 }}
+        {{- with .Values.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
