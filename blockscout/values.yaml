@@ -8,7 +8,7 @@ image:
   repository: quay.io/netwarps/blockscout@sha256
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "bb30328997c1b147dc123ce6ab9d3f6c2e86583cd26ebd2d3b035211b511339f"
+  tag: "becd3e39360a6f58b1effa1b2b7d772795f8acdb96cd4c3b1455a02d9d749387"
 
 
 command: ["/bin/sh"]
