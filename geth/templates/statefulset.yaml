@@ -97,7 +97,7 @@ spec:
             do
                 grep "$item" import.log && echo "The $item is imported." && continue
                 name=`tar xzvf $item`
-                geth import $name
+                geth import --gcmode=archive --syncmode=full $name
                 rm -f $name
                 echo "$item is done." >> import.log
             done
