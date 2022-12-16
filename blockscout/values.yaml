@@ -42,7 +42,7 @@ env:
   - name: LOGO_FOOTER
     value: "/images/chain-wallet.png"
   - name: BLOCKSCOUT_VERSION
-    value: "13573befcc6b94c68b4a05554377e101f36bd7fe"
+    value: "c3f2caf8ed0bfb5e0992520b9e270f699c9a404e"
   - name: RELEASE_LINK
     value: "https://github.com/paradeum-team/blockscout/releases/tag/${BLOCKSCOUT_VERSION}"
   - name: DISABLE_EXCHANGE_RATES
