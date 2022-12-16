@@ -79,8 +79,11 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /app/logs
+              name: logs
           {{- if .Values.extraVolumeMounts }}
-          volumeMounts: {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
+            {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
           {{- end }}
         {{- if .Values.smartContractVerifier.enabled  }}
         - name: {{ .Chart.Name }}-smart-contract-verifier
@@ -107,8 +110,11 @@ spec:
           resources:
             {{- toYaml .Values.smartContractVerifier.resources | nindent 12 }}
         {{- end }}
+      volumes:
+        - name: logs
+          emptyDir: {}
       {{- if .Values.extraVolumes }}
-      volumes: {{ toYaml .Values.extraVolumes | nindent 8 }}
+       {{ toYaml .Values.extraVolumes | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
