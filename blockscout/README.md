@@ -2,7 +2,7 @@
 
 A Helm chart for Kubernetes
 
-![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 13573befcc6b94c68b4a05554377e101f36bd7fe](https://img.shields.io/badge/AppVersion-13573befcc6b94c68b4a05554377e101f36bd7fe-informational?style=flat-square)
+![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: c3f2caf8ed0bfb5e0992520b9e270f699c9a404e](https://img.shields.io/badge/AppVersion-c3f2caf8ed0bfb5e0992520b9e270f699c9a404e-informational?style=flat-square)
 
 ## Installing the Chart
 
@@ -16,7 +16,7 @@ helm repo update
 Install chart
 
 ```
-helm install my-blockscout paradeum-team/blockscout --version --version 0.1.4
+helm install my-blockscout paradeum-team/blockscout --version --version 0.1.5
 ```
 
 ## Values
@@ -37,7 +37,7 @@ helm install my-blockscout paradeum-team/blockscout --version --version 0.1.4
 | env[10].name | string | `"LOGO_FOOTER"` |  |
 | env[10].value | string | `"/images/chain-wallet.png"` |  |
 | env[11].name | string | `"BLOCKSCOUT_VERSION"` |  |
-| env[11].value | string | `"13573befcc6b94c68b4a05554377e101f36bd7fe"` |  |
+| env[11].value | string | `"c3f2caf8ed0bfb5e0992520b9e270f699c9a404e"` |  |
 | env[12].name | string | `"RELEASE_LINK"` |  |
 | env[12].value | string | `"https://github.com/paradeum-team/blockscout/releases/tag/${BLOCKSCOUT_VERSION}"` |  |
 | env[13].name | string | `"DISABLE_EXCHANGE_RATES"` |  |
@@ -106,7 +106,7 @@ helm install my-blockscout paradeum-team/blockscout --version --version 0.1.4
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"quay.io/netwarps/blockscout@sha256"` |  |
-| image.tag | string | `"bb30328997c1b147dc123ce6ab9d3f6c2e86583cd26ebd2d3b035211b511339f"` |  |
+| image.tag | string | `"becd3e39360a6f58b1effa1b2b7d772795f8acdb96cd4c3b1455a02d9d749387"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.className | string | `""` |  |
